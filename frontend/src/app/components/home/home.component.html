@@ -1,3 +1,26 @@
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav py-4">
+						<li class="active"><a routerLink="/">Home</a></li>					
+						<li><a routerLink="/cart">Hot Deals</a></li>
+						<li><a routerLink="/">Categories</a></li>
+						<li><a routerLink="/">Contact Us</a></li>
+						
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
 <!-- SECTION -->
 <div class="section">
     <!-- container -->
@@ -11,7 +34,7 @@
               <img src="./../../../assets/img/shop01.png" alt="">
             </div>
             <div class="shop-body">
-              <h3>Laptop<br>Collection</h3>
+              <h3>Electronics<br>Collection</h3>
               <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
@@ -62,30 +85,30 @@
         <!-- section title -->
         <div class="col-md-12">
           <div class="section-title">
-            <h3 class="title">New Products</h3>
+            <h3 class="title">Get Hot Deals from Memphis store</h3>
           </div>
         </div>
         <!-- /section title -->
   
-        <!-- Products tab & slick -->
+       
         <div class="col-md-12">
           <div class="row">
             <div class="col-md-4 col-sm-6" *ngFor="let p of products">
-             <div class="col-md-4 col-sm-6" >
+            
               <div class="card my-2">
-                <img [src]="p.image" alt="{{p.name}}" width="200px" class="card-img-top" style="cursor:pointer;">
-                <!-- <img alt="image" width="200px" class="card-img-top"  style="cursor:pointer;"> -->
+                <img [src]="p.image" alt="{{p.name}}" width="200px" class="card-img-top" style="cursor:pointer;" (click)="selectProduct(p.id)">
+             
                 <div class="card-header">
                   <div class="card-title">
-                    <!-- <p>{{p.name | titlecase}}</p> -->
-                   <p>Device 1</p>
+                  
+                    <p>{{p.name | titlecase}}</p>
                   </div>
                 </div>
                 <div class="card-body">
-                  <!-- <h6>{{p.description.substr(0, 40)}} ....</h6> -->
-                  <h6>Description test</h6>
+                
+                  <h6>{{p.description.substr(0,29)}} ...</h6>
                   <p class="lead">{{p.price | currency:'KES'}}</p>
-                  <!-- <p class="lead">200 KES</p> -->
+                
                 </div>
   
                 <div class="row d-flex justify-content-center border-primary my-3">
@@ -93,27 +116,25 @@
                     <button class="btn btn-outline-primary btn-sm btn-block"
                             [class.disabled]="p.quantity < 1"
                             [class.btn-outline-danger]="p.quantity < 1"
-                            [disabled]="p.quantity < 1">
+                            [disabled]="p.quantity < 1"  (click)="addToCart(p.id)">                           
                       {{ p.quantity < 1 ? "NO STOCK" : "Add To Cart"}}
                     </button>
-                      <!-- <button class="btn btn-outline-primary btn-sm btn-block">
-                          ADD TO CART
-                    </button> -->
+
+                 
+                    
                   </div>
                 </div>
   
               </div>
   
-            </div>
+            
   
           </div>
   
         </div>
       </div>
-    </div>
-  
-  </div>
-  <!-- /container -->
+
+
   
   <!-- /SECTION -->
   
@@ -124,7 +145,7 @@
       <!-- row -->
       <div class="row">
         <div class="col-md-12">
-          <div class="hot-deal">
+          r<div class="hot-deal">
             <ul class="hot-deal-countdown">
               <li>
                 <div>
