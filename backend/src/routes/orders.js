@@ -40,6 +40,7 @@ router.get('/',function(req,res) {
 
 // Get Single Order
 router.get('/:id', async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     let orderId = req.params.id;
     console.log(orderId);
 
@@ -76,6 +77,7 @@ router.get('/:id', async (req, res) => {
 
 // Place New Order
 router.post('/new', async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     // let userId = req.body.userId;
     // let data = JSON.parse(req.body);
     let {userId, products} = req.body;
@@ -146,6 +148,7 @@ router.post('/new', async (req, res) => {
 
 // Payment Gateway
 router.post('/payment', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     setTimeout(() => {
         res.status(200).json({success: true});
     }, 3000)
