@@ -1,12 +1,10 @@
 {
   "name": "frontend",
   "version": "0.0.0",
-  "scripts": {
-    "heroku-postbuild":"ng build --prod",
+  "scripts": {  
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "watch": "ng build --watch --configuration development",
+    "start": "node server.js",
+    "build": "ng build --prod",    
     "test": "ng test"
   },
   "private": true,
@@ -19,6 +17,7 @@
     "@angular/platform-browser": "~12.0.4",
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
+    "express": "^4.17.1",
     "http": "0.0.1-security",
     "ngx-spinner": "^12.0.0",
     "ngx-toastr": "^14.0.0",
