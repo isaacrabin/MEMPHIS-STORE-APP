@@ -5,12 +5,13 @@ const logger = require('morgan');
 const cors = require('cors');
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 // const authRouter = require('./routes/auth');
 const orderRouter = require('./routes/orders');
+const { profile } = require('console');
 
 app.use(express.json());
 app.use(express.urlencoded());
